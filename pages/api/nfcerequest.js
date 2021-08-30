@@ -2,7 +2,10 @@ import chromium from 'chrome-aws-lambda';
 
 
 export default async function handler(req, res){
-    
+    if (req.Method == "OPTIONS") {
+        w.WriteHeader(http.StatusOK)
+        return
+    }
     if(req.method ==='POST'){
         let browser = null;
         try {
