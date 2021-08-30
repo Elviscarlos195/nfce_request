@@ -2,10 +2,12 @@ import chromium from 'chrome-aws-lambda';
 
 
 export default async function handler(req, res){
-    if (req.Method == "OPTIONS") {
-        w.WriteHeader(http.StatusOK)
-        return
-    }
+    // if (req.Method == "OPTIONS") {
+    //     w.WriteHeader(http.StatusOK)
+    //     return
+    // }
+    
+
     if(req.method ==='POST'){
         let browser = null;
         try {
@@ -58,10 +60,14 @@ export default async function handler(req, res){
             }
         }
     }
-    else{
+    else if(req.method === 'GET'){
         return res.status(400).json({status: 'Erro',
                                     message: 'Método não permitido.'});
-    }   
+    }  
+    else{
+        return res.status(200).json({status: 'Sucesso',
+                                    message: ''});
+    }
 }
 
 async function getBrowserInstance() {
