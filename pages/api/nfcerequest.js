@@ -66,7 +66,7 @@ async function getBrowserInstance() {
 
 	if (!executablePath) {
 		// running locally
-		const puppeteer = require('puppeteer')
+		const puppeteer = require('puppeteer-core')
 		return puppeteer.launch({
 			args: chromium.args,
 			headless: true,
