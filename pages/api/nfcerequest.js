@@ -13,7 +13,7 @@ export default async function handler(req, res){
         try {
             browser = await getBrowserInstance();
             let page = await browser.newPage();
-            let url = req.body.data;
+            let url = req.body;
             await page.goto(url.url.toString(), {waitUntil: 'networkidle2', timeout: 0});
 
             const pageContent = await page.evaluate(() => {  
