@@ -42,8 +42,7 @@ export default async function handler(req, res){
                    title: document.querySelector('.txtTopo').innerHTML,
                    chave: document.querySelector('.chave').innerHTML,
                    vlrTotal: document.querySelector('.txtMax').innerHTML,
-                   products: Array.from(prd),
-                   produtos: [prd]
+                   products: Array.from(prd)
                };
            });
        
